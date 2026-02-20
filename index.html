@@ -504,5 +504,36 @@ function sendMsg(){
   setTimeout(()=>{msgs.innerHTML+=`<div class="msg bot">${R[key]}</div>`;msgs.scrollTop=msgs.scrollHeight},500);
 }
 </script>
+
+<style>
+/* ── PERSISTENT FLOATING CTA BAR (persistent-cta-bar skill) ── */
+body{padding-bottom:80px}
+.float-cta{position:fixed;bottom:0;left:0;right:0;z-index:999;background:#0F172A;border-top:3px solid #f5a623;box-shadow:0 -6px 30px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:space-between;padding:10px 24px;gap:12px}
+.float-cta-label{font-size:0.78rem;font-weight:600;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:8px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fcta-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(220,38,38,.2);border:1px solid rgba(220,38,38,.4);color:#FCA5A5;padding:3px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;flex-shrink:0}
+.fcta-dot{width:5px;height:5px;background:#DC2626;border-radius:50%;animation:fcta-pulse 1.8s infinite}
+@keyframes fcta-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+.float-cta-btns{display:flex;gap:10px;flex-shrink:0}
+.float-btn{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border-radius:7px;font-weight:700;font-size:0.84rem;border:none;cursor:pointer;transition:background .2s,transform .15s;text-decoration:none;white-space:nowrap;line-height:1}
+.float-btn svg{width:16px;height:16px;flex-shrink:0}
+.float-btn-call{background:#DC2626;color:#fff}
+.float-btn-call:hover{background:#B91C1C;transform:translateY(-1px)}
+.float-btn-quote{background:#F97316;color:#fff}
+.float-btn-quote:hover{background:#EA6C0C;transform:translateY(-1px)}
+@media(max-width:700px){.float-cta-label{display:none}.float-cta{justify-content:center;padding:10px 16px}.float-cta-btns{width:100%}.float-btn{flex:1;justify-content:center}}
+@media(max-width:380px){.float-btn{padding:11px 14px;font-size:0.8rem}}
+</style>
+
+<!-- FLOATING BOTTOM CTA BAR — persistent-cta-bar skill -->
+<div class="float-cta" id="floatCta">
+  <div class="float-cta-label">
+    <span class="fcta-badge"><span class="fcta-dot"></span> OPEN</span>
+    Kelowna &amp; Surrounding Area
+  </div>
+  <div class="float-cta-btns">
+    <a href="tel:+12508604402" class="float-btn float-btn-call"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg> Call Now</a>
+    <a href="#contact" class="float-btn float-btn-quote"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg> Get Free Quote</a>
+  </div>
+</div>
 </body>
 </html>
